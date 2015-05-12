@@ -90,7 +90,7 @@ AdapterJS.WebRTCPlugin.pluginState = AdapterJS.WebRTCPlugin.PLUGIN_STATES.NONE;
 
 // True is AdapterJS.onwebrtcready was already called, false otherwise
 // Used to make sure AdapterJS.onwebrtcready is only called once
-AdapterJS.onwebrtcreadyDone = false;
+AdapterJS.webrtcready = false;
 
 // Log levels for the plugin. 
 // To be set by calling AdapterJS.WebRTCPlugin.setLogLevel
@@ -150,8 +150,8 @@ __TemWebRTCReady0 = function () {
 };
 
 AdapterJS.maybeThroughWebRTCReady = function() {
-  if (!AdapterJS.onwebrtcreadyDone) {
-    AdapterJS.onwebrtcreadyDone = true;
+  if (!AdapterJS.webrtcready) {
+    AdapterJS.webrtcready = true;
 
     if (typeof(AdapterJS.onwebrtcready) === 'function') {
       AdapterJS.onwebrtcready(AdapterJS.WebRTCPlugin.plugin !== null);
