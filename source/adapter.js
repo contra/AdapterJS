@@ -996,6 +996,7 @@ if (navigator.mozGetUserMedia) {
   };
 
   AdapterJS.WebRTCPlugin.renderNotificationBar = function (text, buttonText, buttonLink) {
+    return;
     // only inject once the page is ready
     if (document.readyState !== 'complete') {
       return;
